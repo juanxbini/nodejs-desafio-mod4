@@ -1,12 +1,14 @@
 const router = require('express').Router()
 const logController = require('../controllers/logController')
-router.get('/',(req,res)=>{
+router.post('/',(req,res)=>{
     logController.writeLog(req,res)
 })
 router.put('/id', (req,res)=>{
+    logController.writeLog(req,res)
     res.json({message: 'Mostrar el articulo actualizado'})
 })
 router.delete('/id',(req,res)=>{
+    logController.writeLog(req,res)
     res.json({message: 'Mostrar el articulo a borrar'})
 })
 

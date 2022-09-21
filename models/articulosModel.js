@@ -19,9 +19,9 @@ module.exports = {
             cb(false,articulo)
         }
     },
-    update: function(id,cb){
+    update: function(id,articulo,cb){
         let index = articulos.findIndex(articulo => articulo.id == id)
-        let articulo = articulos[index]
+        
         if(index == -1){
             cb(true,articulo)
         }else{

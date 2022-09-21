@@ -1,15 +1,13 @@
 const router = require('express').Router()
-const logController = require('../controllers/logController')
+const articuloController = require('../controllers/articuloController')
 router.post('/',(req,res)=>{
-    logController.writeLog(req,res)
+    articuloController.create(req,res)
 })
-router.put('/id', (req,res)=>{
-    logController.writeLog(req,res)
-    res.json({message: 'Mostrar el articulo actualizado'})
+router.put('/', (req,res)=>{
+    articuloController.put(req,res)
 })
-router.delete('/id',(req,res)=>{
-    logController.writeLog(req,res)
-    res.json({message: 'Mostrar el articulo a borrar'})
+router.delete('/id:',(req,res)=>{
+    articuloController.delete(req,res)
 })
 
 module.exports = router
